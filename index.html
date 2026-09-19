@@ -20,27 +20,9 @@ a{color:inherit;text-decoration:none}
 .btn.main{background:linear-gradient(135deg,#ff2458,#9b16ff);border:0;box-shadow:0 0 30px #ff245844}
 .btn.green{background:#19c96b;border:0;color:#000}
 .btn.outline{background:transparent;border:1px solid #444}
-.btn.glitch{
-  background:#0a0a0a;
-  color:#fff;
-  border:1px solid #ff2558;
-  position:relative;
-  overflow:hidden;
-  text-shadow:1px 0 #ff2558,-1px 0 #00f0ff;
-  animation:glitch 2.5s infinite;
-}
-.btn.glitch:hover{
-  background:#ff2558;
-  color:#fff;
-  text-shadow:none;
-  box-shadow:0 0 20px #ff255888;
-}
-@keyframes glitch{
-  0%,90%,100%{text-shadow:1px 0 #ff2558,-1px 0 #00f0ff;transform:none}
-  92%{text-shadow:2px 0 #ff2558,-2px 0 #00f0ff;transform:translate(1px,0)}
-  94%{text-shadow:-2px 0 #ff2558,2px 0 #00f0ff;transform:translate(-1px,0)}
-  96%{text-shadow:1px 0 #ff2558,-1px 0 #00f0ff;transform:none}
-}
+.btn.glitch{background:#0a0a0a;color:#fff;border:1px solid #ff2558;text-shadow:1px 0 #ff2558,-1px 0 #00f0ff;animation:glitch 2.5s infinite}
+.btn.glitch:hover{background:#ff2558;color:#fff;text-shadow:none;box-shadow:0 0 20px #ff255888}
+@keyframes glitch{0%,90%,100%{text-shadow:1px 0 #ff2558,-1px 0 #00f0ff}92%{text-shadow:2px 0 #ff2558,-2px 0 #00f0ff}94%{text-shadow:-2px 0 #ff2558,2px 0 #00f0ff}}
 .hero{padding:80px 0 60px;background:radial-gradient(circle at 80% 20%,#3b0d53 0,transparent 40%),radial-gradient(circle at 15% 15%,#3d0717 0,transparent 35%)}
 .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
 .kicker{display:inline-block;border:1px solid #3b3b42;border-radius:99px;padding:7px 14px;color:#aaa;font-size:11px;font-weight:900;letter-spacing:.12em;margin-bottom:18px}
@@ -49,14 +31,13 @@ h1 span{color:#ff2558}
 .lead{color:#999;max-width:540px;font-size:17px;margin-bottom:28px}
 .buttons{display:flex;gap:12px;flex-wrap:wrap}
 .hero-card{padding:20px;border:1px solid #29292f;border-radius:24px;background:#0b0b0e;box-shadow:0 30px 80px #000}
-.hero-card .inner{height:280px;border-radius:16px;background:linear-gradient(145deg,#1a0a14,#0d0510);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;border:1px solid #331}
-.hero-card .big{font-size:64px}
+.hero-card .inner{height:280px;border-radius:16px;overflow:hidden;border:1px solid #331}
+.hero-card .inner img{width:100%;height:100%;object-fit:cover;display:block}
 section{padding:70px 0}
 .title{font-size:clamp(30px,5vw,48px);letter-spacing:-.04em;margin-bottom:8px}
 .sub{color:#888;margin-bottom:32px}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
 .card{background:linear-gradient(160deg,#121218,#09090c);border:1px solid #2a2a32;border-radius:20px;padding:24px;position:relative;overflow:hidden}
-.card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 0%,#ff255822,transparent 50%);pointer-events:none}
 .card .type{font-size:11px;color:#ff5578;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
 .card h3{font-size:22px;margin:10px 0 6px}
 .card p{color:#888;font-size:14px;margin-bottom:16px}
@@ -65,39 +46,26 @@ section{padding:70px 0}
 .features{list-style:none;margin:16px 0;font-size:14px;color:#bbb}
 .features li{padding:5px 0;display:flex;gap:8px}
 .features li::before{content:"✓";color:#19c96b;font-weight:900}
-.buy{display:block;text-align:center;margin-top:18px;padding:13px;border-radius:12px;background:#fff;color:#080808;font-weight:900;transition:.2s}
+.buy{display:block;text-align:center;margin-top:18px;padding:13px;border-radius:12px;background:#fff;color:#080808;font-weight:900}
 .buy:hover{background:#ff2558;color:#fff}
-.proof{background:linear-gradient(160deg,#0f0f14,#08080a);border:1px solid #2b2b32;border-radius:24px;padding:28px}
-.proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
-.proof-note{font-size:13px;color:#777;border-left:3px solid #ff2558;padding-left:14px;margin-top:16px}
 .contact{text-align:center;padding:60px 20px;border-radius:24px;background:linear-gradient(135deg,#16070d,#100716);border:1px solid #302333}
-.number{font-size:clamp(24px,4vw,36px);font-weight:900;margin:18px 0;letter-spacing:.04em}
 footer{text-align:center;color:#555;font-size:12px;padding:30px 0 50px}
 .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:100;align-items:center;justify-content:center;padding:20px}
 .modal.show{display:flex}
-.modal-box{background:#0e0e12;border:1px solid #333;border-radius:20px;padding:32px;width:min(400px,95%);box-shadow:0 30px 80px #000}
-.modal-box h2{margin-bottom:6px;font-size:24px}
-.modal-box .sub{margin-bottom:22px}
+.modal-box{background:#0e0e12;border:1px solid #333;border-radius:20px;padding:32px;width:min(400px,95%);position:relative}
 .form-group{margin-bottom:16px}
 .form-group label{display:block;font-size:12px;color:#888;margin-bottom:6px;font-weight:700}
 .form-group input{width:100%;padding:12px 14px;border-radius:10px;border:1px solid #333;background:#121216;color:#fff;font-size:15px}
-.form-group input:focus{outline:none;border-color:#ff2558}
 .modal-actions{display:flex;gap:10px;margin-top:20px}
 .modal-actions .btn{flex:1;text-align:center}
 .close-btn{position:absolute;top:16px;right:16px;background:none;border:none;color:#888;font-size:22px;cursor:pointer}
 .admin-badge{display:none;background:#ff2558;color:#fff;font-size:11px;padding:4px 10px;border-radius:99px;font-weight:900}
 .admin-panel{display:none;padding:40px 0;background:#0a0a0e;border-top:1px solid #222}
 .admin-panel.show{display:block}
-@media(max-width:800px){
-  .hero-grid,.proof-grid{grid-template-columns:1fr}
-  .cards{grid-template-columns:1fr}
-  .nav-right{gap:6px}
-  .btn{padding:9px 12px;font-size:12px}
-}
+@media(max-width:800px){.hero-grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-
 <header class="nav">
   <div class="wrap navin">
     <div class="brand">
@@ -106,8 +74,9 @@ footer{text-align:center;color:#555;font-size:12px;padding:30px 0 50px}
       <span class="admin-badge" id="adminBadge">ADMIN</span>
     </div>
     <div class="nav-right">
-      <button class="btn glitch" onclick="openModal('login')">Login</button>
-      <button class="btn glitch" onclick="openModal('register')">Register</button>
+      <button class="btn glitch" id="loginBtn" onclick="openModal('login')">Login</button>
+      <button class="btn glitch" id="registerBtn" onclick="openModal('register')">Register</button>
+      <button class="btn outline" id="logoutBtn" style="display:none" onclick="doLogout()">Logout</button>
       <a class="btn green" href="https://wa.me/67073280127?text=Hello%2C%20I%20want%20to%20buy%20UK%20TikTok%20account" target="_blank">WhatsApp</a>
     </div>
   </div>
@@ -118,15 +87,11 @@ footer{text-align:center;color:#555;font-size:12px;padding:30px 0 50px}
     <div>
       <div class="kicker">UK TIKTOK ACCOUNTS</div>
       <h1>Heavy<br><span>Dark</span> Accounts</h1>
-      <p class="lead">Premium aged UK TikTok accounts ready for dark aesthetic, heavy content & fast growth. Instant delivery after payment.</p>
-      <div class="buttons">
-        <a class="btn main" href="#packages">View Packages</a>
-      </div>
+      <p class="lead">Premium aged UK TikTok accounts ready for dark aesthetic, heavy content & fast growth.</p>
+      <div class="buttons"><a class="btn main" href="#packages">View Packages</a></div>
     </div>
     <div class="hero-card">
-      <div class="inner" style="padding:0;overflow:hidden">
-        <img src="shadow_logo.jpg" alt="SHADOW UK Logo" style="width:100%;height:100%;object-fit:cover;border-radius:16px;display:block">
-      </div>
+      <div class="inner"><img src="shadow_logo.jpg" alt="SHADOW UK Logo"></div>
     </div>
   </div>
 </section>
@@ -134,69 +99,10 @@ footer{text-align:center;color:#555;font-size:12px;padding:30px 0 50px}
 <section id="packages">
   <div class="wrap">
     <h2 class="title">Choose Your Package</h2>
-    <p class="sub">Different bills / packages available. Contact for exact current stock.</p>
-    <div class="cards">
-
-      <div class="card">
-        <div class="type">Starter</div>
-        <h3>UK Basic</h3>
-        <p>1 UK account – cheapest entry</p>
-        <div class="price">$3 <small>/ account</small></div>
-        <ul class="features">
-          <li>UK region</li>
-          <li>Email access</li>
-          <li>Ready to use</li>
-          <li>Instant delivery</li>
-        </ul>
-        <a class="buy" href="https://wa.me/67073280127?text=I%20want%20UK%20Basic%20%243" target="_blank">Buy Now</a>
-      </div>
-
-      <div class="card">
-        <div class="type">Popular</div>
-        <h3>UK Aged</h3>
-        <p>3–6 months aged UK account</p>
-        <div class="price">$12 <small>/ account</small></div>
-        <ul class="features">
-          <li>UK region</li>
-          <li>Email + full access</li>
-          <li>Better trust score</li>
-          <li>Ready for growth</li>
-        </ul>
-        <a class="buy" href="https://wa.me/67073280127?text=I%20want%20UK%20Aged%20%2412" target="_blank">Buy Now</a>
-      </div>
-
-      <div class="card">
-        <div class="type">Pro</div>
-        <h3>UK Heavy</h3>
-        <p>Strong aged + dark ready</p>
-        <div class="price">$25 <small>/ account</small></div>
-        <ul class="features">
-          <li>6+ months aged</li>
-          <li>High trust</li>
-          <li>Dark aesthetic ready</li>
-          <li>Priority support</li>
-        </ul>
-        <a class="buy" href="https://wa.me/67073280127?text=I%20want%20UK%20Heavy%20%2425" target="_blank">Buy Now</a>
-      </div>
-
-      <div class="card">
-        <div class="type">Elite</div>
-        <h3>UK Shadow Pack</h3>
-        <p>5 accounts bundle (best value)</p>
-        <div class="price">$50 <small>/ 5 accounts</small></div>
-        <ul class="features">
-          <li>5× UK accounts</li>
-          <li>Mixed ages</li>
-          <li>Bulk discount</li>
-          <li>Fast delivery</li>
-        </ul>
-        <a class="buy" href="https://wa.me/67073280127?text=I%20want%20UK%20Shadow%20Pack%20%2450" target="_blank">Buy Now</a>
-      </div>
-
-    </div>
+    <p class="sub">Live packages from Firebase</p>
+    <div class="cards" id="packagesList"></div>
   </div>
 </section>
-
 
 <section id="tournament">
   <div class="wrap">
@@ -205,8 +111,8 @@ footer{text-align:center;color:#555;font-size:12px;padding:30px 0 50px}
     <div style="background:linear-gradient(160deg,#0f0f14,#08080a);border:1px solid #2b2b32;border-radius:24px;padding:32px;text-align:center">
       <div style="font-size:42px;margin-bottom:12px">🏆</div>
       <h3 style="font-size:22px;margin-bottom:8px">FF Esports Tournament</h3>
-      <p style="color:#888;margin-bottom:22px;max-width:420px;margin-left:auto;margin-right:auto">Join Free Fire tournaments, esports events and compete with players.</p>
-      <a class="btn main" href="https://ffesported.vercel.app/" target="_blank" rel="noopener" style="display:inline-block;padding:14px 28px">Open Tournament Site</a>
+      <p style="color:#888;margin-bottom:22px">Join Free Fire tournaments and compete.</p>
+      <a class="btn main" href="https://ffesported.vercel.app/" target="_blank" style="display:inline-block;padding:14px 28px">Open Tournament Site</a>
     </div>
   </div>
 </section>
@@ -215,53 +121,41 @@ footer{text-align:center;color:#555;font-size:12px;padding:30px 0 50px}
   <div class="wrap">
     <div class="contact">
       <h2 class="title">Ready to Buy?</h2>
-      <p class="sub">Contact for live stock & exact account details</p>
+      <p class="sub">Contact for live stock</p>
       <a class="btn main" href="https://wa.me/67073280127?text=Hello%2C%20I%20want%20to%20buy%20UK%20TikTok%20account" target="_blank" style="display:inline-block;padding:16px 40px;font-size:16px">Buy</a>
     </div>
   </div>
 </section>
 
-<!-- Admin Panel (visible after login) -->
 <div class="admin-panel" id="adminPanel">
   <div class="wrap">
     <h2 class="title">Admin Panel</h2>
-    <p class="sub">Logged in as hunterxpc@oemails.con</p>
-    <div class="cards">
-      <div class="card">
-        <div class="type">Stock</div>
-        <h3>Manage Accounts</h3>
-        <p>Update available UK accounts & prices</p>
-        <button class="btn main" style="width:100%;margin-top:12px">Edit Stock</button>
+    <p class="sub">Firebase Realtime Database</p>
+    <div style="background:#0f0f14;border:1px solid #2b2b32;border-radius:20px;padding:24px;margin-bottom:24px">
+      <h3 style="margin-bottom:16px">Add New Package</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div class="form-group"><label>Name</label><input type="text" id="pkgName" placeholder="UK Aged"></div>
+        <div class="form-group"><label>Price ($)</label><input type="number" id="pkgPrice" placeholder="12"></div>
+        <div class="form-group"><label>Type</label><input type="text" id="pkgType" placeholder="Popular"></div>
+        <div class="form-group"><label>Description</label><input type="text" id="pkgDesc" placeholder="Short desc"></div>
       </div>
-      <div class="card">
-        <div class="type">Orders</div>
-        <h3>View Orders</h3>
-        <p>Check recent purchases</p>
-        <button class="btn main" style="width:100%;margin-top:12px">View Orders</button>
-      </div>
+      <button class="btn main" style="margin-top:12px;width:100%" onclick="addPackage()">Add Package</button>
     </div>
-    <button class="btn outline" style="margin-top:20px" onclick="logout()">Logout</button>
+    <h3 style="margin-bottom:12px">Current Packages</h3>
+    <div id="adminPkgList" style="display:grid;gap:10px;margin-bottom:20px"></div>
+    <button class="btn outline" onclick="doLogout()">Logout</button>
   </div>
 </div>
 
-<footer>
-  Independent seller storefront • Not affiliated with TikTok • Heavy Dark Accounts
-</footer>
+<footer>Independent seller • Not affiliated with TikTok</footer>
 
-<!-- Login Modal -->
 <div class="modal" id="loginModal">
-  <div class="modal-box" style="position:relative">
+  <div class="modal-box">
     <button class="close-btn" onclick="closeModal('login')">×</button>
     <h2>Login</h2>
-    <p class="sub">Admin access</p>
-    <div class="form-group">
-      <label>Email</label>
-      <input type="email" id="loginEmail" placeholder="hunterxpc@oemails.con" value="">
-    </div>
-    <div class="form-group">
-      <label>Password</label>
-      <input type="password" id="loginPass" placeholder="••••••••">
-    </div>
+    <p class="sub" style="color:#888;margin-bottom:16px">Admin (Firebase Auth)</p>
+    <div class="form-group"><label>Email</label><input type="email" id="loginEmail" placeholder="hunterxpc@oemails.con"></div>
+    <div class="form-group"><label>Password</label><input type="password" id="loginPass"></div>
     <div class="modal-actions">
       <button class="btn outline" onclick="closeModal('login')">Cancel</button>
       <button class="btn main" onclick="doLogin()">Login</button>
@@ -269,20 +163,12 @@ footer{text-align:center;color:#555;font-size:12px;padding:30px 0 50px}
   </div>
 </div>
 
-<!-- Register Modal -->
 <div class="modal" id="registerModal">
-  <div class="modal-box" style="position:relative">
+  <div class="modal-box">
     <button class="close-btn" onclick="closeModal('register')">×</button>
     <h2>Register</h2>
-    <p class="sub">Create customer account</p>
-    <div class="form-group">
-      <label>Email</label>
-      <input type="email" id="regEmail" placeholder="your@email.com">
-    </div>
-    <div class="form-group">
-      <label>Password</label>
-      <input type="password" id="regPass" placeholder="Create password">
-    </div>
+    <div class="form-group"><label>Email</label><input type="email" id="regEmail"></div>
+    <div class="form-group"><label>Password</label><input type="password" id="regPass"></div>
     <div class="modal-actions">
       <button class="btn outline" onclick="closeModal('register')">Cancel</button>
       <button class="btn main" onclick="doRegister()">Register</button>
@@ -290,52 +176,125 @@ footer{text-align:center;color:#555;font-size:12px;padding:30px 0 50px}
   </div>
 </div>
 
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
 <script>
-const ADMIN_EMAIL = "hunterxpc@oemails.con";
-const ADMIN_PASS = "hunter";
+const firebaseConfig = {
+  apiKey: "AIzaSyDoZw5fXVu3q0KPbsLJneFYXXeXjWbuc_g",
+  authDomain: "tiktok-b5d91.firebaseapp.com",
+  databaseURL: "https://tiktok-b5d91-default-rtdb.firebaseio.com",
+  projectId: "tiktok-b5d91",
+  storageBucket: "tiktok-b5d91.firebasestorage.app",
+  messagingSenderId: "489785682826",
+  appId: "1:489785682826:web:91868a2ac5ca42fc08e0f3"
+};
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db = firebase.database();
 
-function openModal(type) {
-  document.getElementById(type + "Modal").classList.add("show");
-}
-function closeModal(type) {
-  document.getElementById(type + "Modal").classList.remove("show");
+const defaultPackages = [
+  {name:"UK Basic", price:3, type:"Starter", desc:"1 UK account – cheapest"},
+  {name:"UK Aged", price:12, type:"Popular", desc:"3–6 months aged"},
+  {name:"UK Heavy", price:25, type:"Pro", desc:"Strong aged + dark ready"},
+  {name:"UK Shadow Pack", price:50, type:"Elite", desc:"5 accounts bundle"}
+];
+
+function openModal(t){document.getElementById(t+"Modal").classList.add("show")}
+function closeModal(t){document.getElementById(t+"Modal").classList.remove("show")}
+
+function doLogin(){
+  const email=document.getElementById("loginEmail").value.trim();
+  const pass=document.getElementById("loginPass").value;
+  if(!email||!pass){alert("Email & password required");return}
+  auth.signInWithEmailAndPassword(email,pass)
+    .then(()=>{closeModal("login");alert("Admin login successful")})
+    .catch(e=>alert("Login failed: "+e.message));
 }
 
-function doLogin() {
-  const email = document.getElementById("loginEmail").value.trim();
-  const pass = document.getElementById("loginPass").value;
-  if (email === ADMIN_EMAIL && pass === ADMIN_PASS) {
-    localStorage.setItem("shadowAdmin", "1");
-    document.getElementById("adminBadge").style.display = "inline-block";
+function doRegister(){
+  const email=document.getElementById("regEmail").value.trim();
+  const pass=document.getElementById("regPass").value;
+  if(!email||!pass){alert("Required");return}
+  auth.createUserWithEmailAndPassword(email,pass)
+    .then(()=>{closeModal("register");alert("Registered! Contact WhatsApp to buy.")})
+    .catch(e=>alert("Error: "+e.message));
+}
+
+function doLogout(){auth.signOut()}
+
+auth.onAuthStateChanged(user=>{
+  if(user){
+    document.getElementById("adminBadge").style.display="inline-block";
     document.getElementById("adminPanel").classList.add("show");
-    closeModal("login");
-    alert("Admin login successful");
+    document.getElementById("loginBtn").style.display="none";
+    document.getElementById("registerBtn").style.display="none";
+    document.getElementById("logoutBtn").style.display="inline-block";
   } else {
-    alert("Wrong email or password");
+    document.getElementById("adminBadge").style.display="none";
+    document.getElementById("adminPanel").classList.remove("show");
+    document.getElementById("loginBtn").style.display="inline-block";
+    document.getElementById("registerBtn").style.display="inline-block";
+    document.getElementById("logoutBtn").style.display="none";
   }
+});
+
+function loadPackages(){
+  db.ref("packages").on("value",snap=>{
+    let pkgs=[];
+    if(snap.exists()){
+      snap.forEach(c=>pkgs.push({id:c.key,...c.val()}));
+    }
+    if(pkgs.length===0){
+      defaultPackages.forEach(p=>db.ref("packages").push(p));
+      return;
+    }
+    renderPackages(pkgs);
+    renderAdminList(pkgs);
+  });
 }
 
-function doRegister() {
-  const email = document.getElementById("regEmail").value.trim();
-  if (!email) {
-    alert("Enter email");
-    return;
-  }
-  alert("Registered (demo). You can now contact via WhatsApp to buy.");
-  closeModal("register");
+function renderPackages(pkgs){
+  const el=document.getElementById("packagesList");
+  if(!el)return;
+  el.innerHTML=pkgs.map(p=>`
+    <div class="card">
+      <div class="type">${p.type||"New"}</div>
+      <h3>${p.name}</h3>
+      <p>${p.desc||""}</p>
+      <div class="price">$${p.price} <small>/ account</small></div>
+      <ul class="features"><li>UK region</li><li>Email access</li><li>Ready to use</li><li>Instant delivery</li></ul>
+      <a class="buy" href="https://wa.me/67073280127?text=I%20want%20${encodeURIComponent(p.name)}%20%24${p.price}" target="_blank">Buy Now</a>
+    </div>`).join("");
 }
 
-function logout() {
-  localStorage.removeItem("shadowAdmin");
-  document.getElementById("adminBadge").style.display = "none";
-  document.getElementById("adminPanel").classList.remove("show");
+function renderAdminList(pkgs){
+  const list=document.getElementById("adminPkgList");
+  if(!list)return;
+  list.innerHTML=pkgs.map(p=>`
+    <div style="background:#121218;border:1px solid #333;border-radius:12px;padding:14px;display:flex;justify-content:space-between;align-items:center">
+      <div><strong>${p.name}</strong> — $${p.price}<div style="color:#888;font-size:13px">${p.type||""} • ${p.desc||""}</div></div>
+      <button class="btn outline" style="padding:6px 12px;font-size:12px" onclick="deletePackage('${p.id}')">Delete</button>
+    </div>`).join("");
 }
 
-// Auto check admin on load
-if (localStorage.getItem("shadowAdmin") === "1") {
-  document.getElementById("adminBadge").style.display = "inline-block";
-  document.getElementById("adminPanel").classList.add("show");
+function addPackage(){
+  const name=document.getElementById("pkgName").value.trim();
+  const price=parseFloat(document.getElementById("pkgPrice").value);
+  const type=document.getElementById("pkgType").value.trim()||"New";
+  const desc=document.getElementById("pkgDesc").value.trim()||"UK TikTok Account";
+  if(!name||!price){alert("Name & Price required");return}
+  db.ref("packages").push({name,price,type,desc})
+    .then(()=>{document.getElementById("pkgName").value="";document.getElementById("pkgPrice").value="";document.getElementById("pkgType").value="";document.getElementById("pkgDesc").value="";alert("Added to Firebase!")})
+    .catch(e=>alert(e.message));
 }
+
+function deletePackage(id){
+  if(!confirm("Delete?"))return;
+  db.ref("packages/"+id).remove();
+}
+
+loadPackages();
 </script>
 </body>
 </html>
